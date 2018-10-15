@@ -36,6 +36,7 @@
           <li><a href="#">Chocolates chips</a></li>
           <li><a href="#">Nuts</a></li>
           <li><a href="#">Gluten full</a></li>
+          <li><a href="logout.php" class="btn btn-success ">Logout</a></li>
           <li>
             <a href="/cart.php" class="btn btn-warning navbar-btn">
               <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
@@ -47,6 +48,6 @@
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello Wilder !</strong>
+    <strong>Hello Fayçal !</strong>
   </div>
 </header>
