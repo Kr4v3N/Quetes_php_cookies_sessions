@@ -4,6 +4,31 @@ if (!isset($_SESSION['loginname'])) {
     header('Location: login.php');
     exit();
 }
+if (!empty($_GET['add_to_cart'])) {
+    $product = $_GET['add_to_cart'];
+    setcookie("cart[$product]", 0);
+    $cart = $_COOKIE['cart'];
+    switch ($_GET['add_to_cart']) {
+        case 32 :
+            $cart[$product]++;
+            setcookie("cart[$product]", $cart[$product]);
+            break;
+        case 36 :
+            $cart[$product]++;
+            setcookie("cart[$product]", $cart[$product]);
+            break;
+        case 46 :
+            $cart[$product]++;
+            setcookie("cart[$product]", $cart[$product]);
+            break;
+        case 58 :
+            $cart[$product]++;
+            setcookie("cart[$product]", $cart[$product]);
+            break;
+    }
+    header('Location: index.php');
+    exit();
+}
 
 ?>
 <?php require 'inc/head.php'; ?>

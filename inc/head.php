@@ -36,18 +36,24 @@
           <li><a href="#">Chocolates chips</a></li>
           <li><a href="#">Nuts</a></li>
           <li><a href="#">Gluten full</a></li>
-          <li><a href="logout.php" class="btn btn-success ">Logout</a></li>
-          <li>
-            <a href="/cart.php" class="btn btn-warning navbar-btn">
-              <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-              Cart
+            <li>
+                <a href="/cart.php" class="btn btn-warning navbar-btn">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                    Cart
+                </a>
+            </li>
+            <a href="logout.php" class="btn btn-danger navbar-btn">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                Logout
             </a>
-          </li>
-        </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
   <div class="container-fluid text-right">
-    <strong>Hello Fayçal !</strong>
+      <?php if (isset($_SESSION['loginname'])) : ?>
+          <strong><?= 'Hello ' . "" . $_SESSION['loginname'] . '!'; ?></strong>
+      <?php else : ?>
+      <strong><?= 'Hello Wilder !'; ?></strong>
+    <?php endif; ?>
   </div>
 </header>
