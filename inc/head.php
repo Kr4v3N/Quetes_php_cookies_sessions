@@ -37,9 +37,18 @@
                 <a href="/cart.php" class="btn btn-warning navbar-btn">
                     <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                     Cart
+                    <?php
+                    if (isset($_COOKIE['cart']) && count($_COOKIE['cart']) != 0) {
+                        $total = 0;
+                        foreach ($_COOKIE['cart'] as $product => $quantity) {
+                            $total += $quantity;
+                        }
+                        echo '(' . $total .')';
+                    }
+                    ?>
                 </a>
             </li>
-            <a href="logout.php" class="btn btn-danger navbar-btn">
+            <a href="/logout.php" class="btn btn-danger navbar-btn">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                 Logout
             </a>

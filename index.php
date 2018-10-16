@@ -4,9 +4,9 @@ if (!isset($_SESSION['loginname'])) {
     header('Location: login.php');
     exit();
 }
-if (!empty($_GET['add_to_cart'])) {
+elseif (!empty($_GET['add_to_cart'])) {
     $product = $_GET['add_to_cart'];
-    setcookie("cart[$product]", 0);
+    setcookie("cart[$product]", 0, time() + 3600, "/", true);
     $cart = $_COOKIE['cart'];
     switch ($_GET['add_to_cart']) {
         case 32 :
@@ -30,6 +30,7 @@ if (!empty($_GET['add_to_cart'])) {
     exit();
 }
 ?>
+
 <?php require 'inc/head.php'; ?>
     <section class="cookies container-fluid">
         <div class="row">
