@@ -1,17 +1,16 @@
 <?php
 session_start();
-if (!empty($_POST['loginname']) && !isset($_SESSION['loginname']))
-{
+if (!empty($_POST['loginname']) && !isset($_SESSION['loginname'])) {
     $_SESSION['loginname'] = $_POST['loginname'];
     header('Location: login.php');
     exit();
 }
-elseif (isset($_SESSION['loginname']))
-{
+elseif (isset($_SESSION['loginname'])) {
     header('Location: index.php');
     exit();
 }
 ?>
+
 <?php require 'inc/head.php'; ?>
 <div class="container" style="margin-top:40px">
     <div class="row">
